@@ -18,6 +18,96 @@
 
     </div>
     <style>
+      * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  /*取消样式*/
+ol,ul {
+    list-style-type: none;
+  }
+  .doraemon {
+    width: 500px;
+    height: 610px;
+    position: absolute;
+    top: 0;
+    left: -9%;
+    bottom: 40%;
+    margin: auto;
+  }
+  .eye-wrap {
+    position: absolute;
+  }
+  .eye-wrap.left {
+    left: 73px;
+    top: 35px;
+    width: 87px;
+    height: 106px;
+  }
+  .eye-wrap.right {
+    left: 157px;
+    top: 42px;
+    width: 88px;
+    height: 110px;
+  }
+  .eye{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+  }
+  .pupil::after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: auto;
+    bottom: 0;
+    right: 0;
+  }
+  .nose {
+    position: absolute;
+    left: 115px;
+    top: 123px;
+    z-index: 3;
+  }
+  .mustache-list {
+    position: absolute;
+    z-index: 3;
+  }
+  .mustache-list li {
+    position: relative;
+  }
+  .mustache-list li:first-child {
+    -webkit-transform: rotate(15deg);
+    top: -1.75em;
+  }
+  .mustache-list li:last-child {
+    -webkit-transform: rotate(-15deg);
+    top: 1.75em;
+  }
+  .mustache-list.left {
+    -webkit-transform: rotate(15deg);
+    top: 165px;
+    left: -5px;
+  }
+  .mustache-list.right {
+    -webkit-transform: scaleX(-1.4) rotate(0deg);
+    top: 188px;
+    right: 65px;
+  }
+  .nose::after {
+    display: block;
+    content: "";
+    position: absolute;
+  }
+
+
+
         * {box-sizing: border-box;}
         *::before,*::after {box-sizing: border-box;}
         ol,ul {
@@ -42,7 +132,7 @@
         }
         #demo{
             position: fixed;
-            height: 35vh;
+            height: 31%;
             top: 0;
             left: 0 ;
             width: 100%;
