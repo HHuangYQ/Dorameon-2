@@ -1,5 +1,22 @@
 const string = `
-/*你好，我叫小黄，现在我来演示一下画哆啦A梦**/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  /*取消样式*/
+ol,ul {
+    list-style-type: none;
+  }
+  .doraemon {
+    width: 500px;
+    height: 610px;
+    position: absolute;
+    top: 0;
+    left: 5%;
+    bottom: 40%;
+    margin: auto;
+  }
 /*给背景加点颜色*/
  body{
     width: 100%;
@@ -20,7 +37,28 @@ const string = `
     z-index: 3;
   }
   /*让我们来给他加上大大的眼睛*/
+  .eye-wrap {
+    position: absolute;
+  }
+  .eye-wrap.left {
+    left: 73px;
+    top: 35px;
+    width: 87px;
+    height: 106px;
+  }
+  .eye-wrap.right {
+    left: 157px;
+    top: 42px;
+    width: 88px;
+    height: 110px;
+  }
   .eye {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
     background-color: #fff;
     border-radius: 50%;
     border: 2px solid #000;
@@ -44,10 +82,19 @@ const string = `
     bottom: 0;
   }
   .pupil::after {
+    display: block;
+    content: "";
     width: 7px;
     height: 14px;
     background-color: #fff;
+    z-index: 2;
     border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: auto;
+    bottom: 0;
+    right: 0;
   }
   /*红红的鼻子*/
   .nose {
@@ -55,25 +102,52 @@ const string = `
     width: 58px;
     height: 58px;
     background-color: #e40224;
+    position: absolute;
+    left: 115px;
     top: 123px;
+    z-index: 3;
     border-radius: 50%;
   }
-  /*鼻子高光*/
-  .nose::after {
-    background-color: #fff;
-    border-radius: 50%;
-    width: 22px;
-    height: 22px;
-    left: 11px;
-    top: 11px;
+  .mustache-list {
+    position: absolute;
+    z-index: 3;
   }
-  /*加上两边的胡须*/
   .mustache-list li {
     width: 90px;
     height: 5px;
     background-color: #000;
+    position: relative;
   }
-  
+  .mustache-list li:first-child {
+    -webkit-transform: rotate(15deg);
+    top: -1.75em;
+  }
+  .mustache-list li:last-child {
+    -webkit-transform: rotate(-15deg);
+    top: 1.75em;
+  }
+  .mustache-list.left {
+    -webkit-transform: rotate(15deg);
+    top: 165px;
+    left: -5px;
+  }
+  .mustache-list.right {
+    -webkit-transform: scaleX(-1.4) rotate(0deg);
+    top: 188px;
+    right: 65px;
+  }
+  /*鼻子高光*/
+  .nose::after {
+    display: block;
+    content: "";
+    background-color: #fff;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    left: 11px;
+    top: 11px;
+  }
   .mouth {
     border: 2px solid #000;
     width: 340px;
